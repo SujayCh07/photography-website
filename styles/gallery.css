@@ -1,0 +1,242 @@
+/* Top navigation bar */
+.top-nav {
+    background-color: #1a1a1a; /* Darker background color */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top of everything else */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li {
+    margin: 0 20px; /* Space between the items */
+}
+
+.top-nav ul li a {
+    color: #FFD700; /* Golden text color */
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust the size of the text */
+    transition: color 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+    color: #ffa200; /* Lighter golden color on hover */
+}
+
+.top-nav ul li a i {
+    margin-right: 8px; /* Spacing between the icon and the text */
+}
+
+
+/* Add some space to the main content so it's not hidden behind the fixed nav */
+body {
+    padding-top: 60px; /* Adjust this depending on the height of your nav */
+}
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fea1a1, #ff9500); /* Added gradient background */
+  border-top: 50px solid transparent; /* Removed border-top */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Added box shadow */
+}
+
+.gallery {
+  font-family: 'Inter', sans-serif;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 30px;
+    background: #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #000000; /* Updated text color */
+  }
+
+  #gallery {
+    position: relative;
+    width: 100%;
+    padding: 100px 20px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1000px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    animation: pulsate 2s infinite; /* Added pulsating effect */
+  }
+  .subtitle-wrapper-2,
+  .subtitle-wrapper-3,
+  .subtitle-wrapper-4,
+  .subtitle-wrapper-5 {
+    flex: 1;
+    max-width: 100;
+    text-align: center;
+    position: relative; /* Added for positioning the line */
+  }
+
+  .subtitle-link-2,
+  .subtitle-link-3,
+  .subtitle-link-4,
+  .subtitle-link-5 {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    position: relative; /* Added for the line */
+    font-size: 1.5em; /* Increased font size */
+    font-weight: bold; /* Bold font weight */
+  }
+
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
+    grid-gap: 10px; /* Adjust the gap between squares as needed */
+    justify-items: center;
+    align-items: center;
+    padding: 20px; /* Added padding to create space around the images */
+    width: 100%;
+    max-width: 1100px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+  }
+
+
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    transition: transform 0.3s ease-in-out;
+    border: 5px solid #ffffff;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+.gallery-description {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Styles for image caption and description */
+.gallery-grid img[data-caption]:hover::after {
+  content: attr(data-caption);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFD700;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.gallery-grid img[data-description]:hover::before {
+  content: attr(data-description);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFD700;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it appears on top */
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox.active {
+  display: flex; /* Display the Lightbox when active */
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.5s;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #FFD700;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer nav ul li {
+  display: inline;
+}
+
+footer nav ul li a {
+  text-decoration: none;
+  color: #FFD700;
+  transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+  color: #ffa200;
+}

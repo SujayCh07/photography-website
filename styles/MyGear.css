@@ -1,0 +1,91 @@
+.top-nav {
+    background-color: #1a1a1a; /* Darker background color */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 10px;
+    z-index: 1000; /* Ensures the nav stays on top of everything else */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li {
+    margin: 0 20px; /* Space between the items */
+}
+
+.top-nav ul li a {
+    color: #FFD700; /* Golden text color */
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust the size of the text */
+    transition: color 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+    color: #ffa200; /* Lighter golden color on hover */
+}
+
+.top-nav ul li a i {
+    margin-right: 8px; /* Spacing between the icon and the text */
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: url('../images/bg2.jpg') no-repeat center center/cover; /* Add your background image here */
+    color: #fb4e00;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Ensure full height of the viewport */
+}
+
+#my-gear {
+    display: flex;
+    font-size: 30px;
+    padding-bottom: 100px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+}
+
+.gear-gallery {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping of items */
+}
+
+.gear-item {
+    position: relative; /* Position relative for absolutely positioned children */
+    margin: 40px; /* Space between items */
+    text-align: center; /* Center labels below images */
+}
+
+.gear-item img {
+    width: 300px; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.label-box {
+    position: absolute; /* Positioning relative to .gear-item */
+    top: calc(100% + 20px); /* Position 20px below the image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    border-radius: 15px; /* Rounded corners */
+    padding: 5px 10px; /* Add some padding */
+    font-size: 20px; /* Adjust label size */
+    color: #333; /* Dark text for contrast */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+}
+
+label {
+    display: none; /* Hide the original labels */
+}
