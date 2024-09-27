@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Photography Portfolio</title>
+    <link  rel="stylesheet" href="styles/gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .top-nav {
+    background-color: #1a1a1a; /* Darker background color */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top of everything else */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li {
+    margin: 0 20px; /* Space between the items */
+}
+
+.top-nav ul li a {
+    color: #FFD700; /* Golden text color */
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust the size of the text */
+    transition: color 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+    color: #ffa200; /* Lighter golden color on hover */
+}
+
+.top-nav ul li a i {
+    margin-right: 8px; /* Spacing between the icon and the text */
+}
+        /* Lightbox Styles */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Make sure it appears on top */
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox.active {
+            display: flex; /* Display the Lightbox when active */
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.5s;
+        }
+
+        /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Additional styling for the gallery */
+        .gallery-grid img {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<nav class="top-nav">
+    <ul>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="gallery.html"><i class="fa fa-camera"></i> Gallery</a></li>
+        <li><a href="about.html"><i class="fa fa-user"></i> About Me</a></li>
+        <li><a href="gear.html"><i class="fa fa-cogs"></i> My Gear</a></li>
+    </ul>
+</nav>
+
+<body>
+
+    <div class="lightbox">
+        <img src="" alt="">
+    </div>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="gallery-title">Gallery</h2>
+            <div class="subtitle-wrapper-2">
+                <a href="#" class="subtitle-link-2" data-category="nature">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                    <span>Nature Photos</span>
+                </a>
+                <hr class="subtitle-line"> <!-- Add a line under the subtitle -->
+            </div>
+            <div class="gallery-grid nature-photos"> <!-- Add a class for the nature photos grid -->
+                <!-- Add your nature photos here, with a data-category attribute indicating their category -->
+                <img src="images/nature/nature1.jpg" alt="Nature Photo 1" data-caption="Nature Caption 1" data-description="Nature Description 1">
+                <img src="images/nature/nature2.jpg" alt="Nature Photo 2" data-caption="Nature Caption 2" data-description="Nature Description 2">
+                <img src="images/nature/nature3.jpg" alt="Nature Photo 3" data-caption="Nature Caption 3" data-description="Nature Description 3">
+                <img src="images/nature/nature4.jpg" alt="Nature Photo 4" data-caption="Nature Caption 4" data-description="Nature Description 4">
+                <img src="images/nature/nature5.jpg" alt="Nature Photo 5" data-caption="Nature Caption 5" data-description="Nature Description 5">
+                <img src="images/nature/nature6.jpg" alt="Nature Photo 6" data-caption="Nature Caption 6" data-description="Nature Description 6">
+                <img src="images/nature/nature7.jpg" alt="Nature Photo 7" data-caption="Nature Caption 7" data-description="Nature Description 7">
+                <img src="images/nature/nature8.jpg" alt="Nature Photo 8" data-caption="Nature Caption 8" data-description="Nature Description 8">
+                <img src="images/nature/nature9.jpg" alt="Nature Photo 9" data-caption="Nature Caption 9" data-description="Nature Description 9">
+                <img src="images/nature/nature10.jpg" alt="Nature Photo 10" data-caption="Nature Caption 10" data-description="Nature Description 10">
+                <!-- Add more nature photos here -->
+            </div>
+            <!-- Repeat the above structure for the other subtitles (city, beach) -->
+            <div class="subtitle-wrapper-3">
+                <a href="#" class="subtitle-link-3" data-category="city">
+                    <i class="fa fa-city" aria-hidden="true"></i>
+                    <span>City Photos</span>
+                </a>
+                <hr class="subtitle-line">
+            </div>
+            <div class="gallery-grid city-photos">
+                <!-- Add your city photos here -->
+                <img src="images/city/city1.jpg" alt="City Photo 1" data-caption="City Caption 1" data-description="City Description 1">
+                <img src="images/city/city2.jpg" alt="City Photo 2" data-caption="City Caption 2" data-description="City Description 2">
+                <img src="images/city/city3.jpg" alt="City Photo 3" data-caption="City Caption 3" data-description="City Description 3">
+                <img src="images/city/city4.jpg" alt="City Photo 4" data-caption="City Caption 4" data-description="City Description 4">
+                <img src="images/city/city5.jpg" alt="City Photo 5" data-caption="City Caption 5" data-description="City Description 5">
+                <img src="images/city/city6.jpg" alt="City Photo 6" data-caption="City Caption 6" data-description="City Description 6">
+                <img src="images/city/city7.jpg" alt="City Photo 7" data-caption="City Caption 7" data-description="City Description 7">
+                <img src="images/city/city8.jpg" alt="City Photo 8" data-caption="City Caption 8" data-description="City Description 8">
+                <img src="images/city/city9.jpg" alt="City Photo 9" data-caption="City Caption 9" data-description="City Description 9">
+                <img src="images/city/city10.jpg" alt="City Photo 10" data-caption="City Caption 10" data-description="City Description 10">
+            </div>
+            <div class="subtitle-wrapper-4">
+                <a href="#" class="subtitle-link-4" data-category="beach">
+                    <i class="fa fa-umbrella-beach" aria-hidden="true"></i>
+                    <span>Beach Photos</span>
+                </a>
+                <hr class="subtitle-line">
+            </div>
+            <div class="gallery-grid beach-photos">
+                <!-- Add your beach photos here -->
+                <img src="images/beach/beach1.jpg" alt="Beach Photo 1" data-caption="Beach Caption 1" data-description="Beach Description 1">
+                <img src="images/beach/beach2.jpg" alt="Beach Photo 2" data-caption="Beach Caption 2" data-description="Beach Description 2">
+                <img src="images/beach/beach3.jpg" alt="Beach Photo 3" data-caption="Beach Caption 3" data-description="Beach Description 3">
+                <img src="images/beach/beach4.jpg" alt="Beach Photo 4" data-caption="Beach Caption 4" data-description="Beach Description 4">
+                <img src="images/beach/beach5.jpg" alt="Beach Photo 5" data-caption="Beach Caption 5" data-description="Beach Description 5">
+                <img src="images/beach/beach6.jpg" alt="Beach Photo 6" data-caption="Beach Caption 6" data-description="Beach Description 6">
+                <img src="images/beach/beach7.jpg" alt="Beach Photo 7" data-caption="Beach Caption 7" data-description="Beach Description 7">
+                <img src="images/beach/beach8.jpg" alt="Beach Photo 8" data-caption="Beach Caption 8" data-description="Beach Description 8">
+                <img src="images/beach/beach9.jpg" alt="Beach Photo 9" data-caption="Beach Caption 9" data-description="Beach Description 9">
+                <img src="images/beach/beach10.jpg" alt="Beach Photo 10" data-caption="Beach Caption 10" data-description="Beach Description 10">
+            </div>
+            <div class="subtitle-wrapper-5">
+                <a href="#" class="subtitle-link-5" data-category="beach">
+                    <i class="fa fa-sun" aria-hidden="true"></i>
+                    <span>Sunset Photos</span>
+                </a>
+                <hr class="subtitle-line">
+            </div>
+            <div class="gallery-grid sunset-photos">
+                <img src="images/sunset/sunset1.jpg" alt="Sunset Photo 1" data-caption="Sunset Caption 1" data-description="Sunset Description 1">
+                <img src="images/sunset/sunset2.jpg" alt="Sunset Photo 2" data-caption="Sunset Caption 2" data-description="Sunset Description 2">
+                <img src="images/sunset/sunset3.jpg" alt="Sunset Photo 3" data-caption="Sunset Caption 3" data-description="Sunset Description 3">
+                <img src="images/sunset/sunset4.jpg" alt="Sunset Photo 4" data-caption="Sunset Caption 4" data-description="Sunset Description 4">
+                <img src="images/sunset/sunset5.jpg" alt="Sunset Photo 5" data-caption="Sunset Caption 5" data-description="Sunset Description 5">
+                <img src="images/sunset/sunset6.jpg" alt="Sunset Photo 6" data-caption="Sunset Caption 6" data-description="Sunset Description 6">
+                <img src="images/sunset/sunset7.jpg" alt="Sunset Photo 7" data-caption="Sunset Caption 7" data-description="Sunset Description 7">
+                <img src="images/sunset/sunset8.jpg" alt="Sunset Photo 8" data-caption="Sunset Caption 8" data-description="Sunset Description 8">
+                <img src="images/sunset/sunset9.jpg" alt="Sunset Photo 9" data-caption="Sunset Caption 9" data-description="Sunset Description 9">
+                <img src="images/sunset/sunset10.jpg" alt="Sunset Photo 10" data-caption="Sunset Caption 10" data-description="Sunset Description 10">
+            </div>
+            <div class="gallery-description">
+                <!-- Add your description here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <p>&copy; 2024 Sujay Chava</p>
+    </footer>
+
+    <script>
+        // JavaScript for Lightbox functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+
+            galleryImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    lightboxImg.src = image.src; // Set the clicked image source in the lightbox
+                    lightbox.classList.add('active'); // Show the lightbox
+                });
+            });
+
+            // Close the lightbox when clicked outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target !== lightboxImg) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        });
+    </script>
+<script>
+
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    const images = document.querySelectorAll('.gallery-grid img');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+
+    let currentIndex = 0;
+
+    images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            currentIndex = index;
+            openLightbox(image.src);
+        });
+    });
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateLightboxImage();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateLightboxImage();
+    });
+
+    function openLightbox(src) {
+        lightboxImage.src = src;
+        lightbox.style.display = 'flex';
+        document.addEventListener('keydown', handleKeyPress); // Listen for keydown events
+    }
+
+    function updateLightboxImage() {
+        lightboxImage.src = images[currentIndex].src;
+    }
+
+    lightbox.addEventListener('click', (event) => {
+        if (event.target !== lightboxImage) {
+            lightbox.style.display = 'none';
+            document.removeEventListener('keydown', handleKeyPress); // Remove listener when lightbox is closed
+        }
+    });
+
+    function handleKeyPress(event) {
+        if (event.key === 'ArrowLeft') {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateLightboxImage();
+        } else if (event.key === 'ArrowRight') {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateLightboxImage();
+        }
+    }
+</script>
+
+</body>
+</html>

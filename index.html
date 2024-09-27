@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="top-nav">
+    <ul>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="gallery.html"><i class="fa fa-camera"></i> Gallery</a></li>
+        <li><a href="about.html"><i class="fa fa-user"></i> About Me</a></li>
+        <li><a href="gear.html"><i class="fa fa-cogs"></i> My Gear</a></li>
+    </ul>
+</nav>
+
+    <header>
+        <section class="parallax">
+            <div class="parallax-content">
+                <div class="overlay" id="left-overlay"></div>
+                <div class="overlay-right" id="right-overlay"></div> <!-- New right-side overlay -->
+                <div class="caption-bg">
+                    <h1>Sujay Chava</h1>
+                    <p class="subtitle">Photography Portfolio</p>
+                    <div class="subtitles">
+                        <a href="gallery.html" class="subtitle-link">
+                            <i class="fa fa-camera" aria-hidden="true"></i> Gallery
+                        </a>
+                        <a href="about.html" class="subtitle-link">
+                            <i class="fa fa-user" aria-hidden="true"></i> About Me
+                        </a>
+                        <a href="gear.html" class="subtitle-link">
+                            <i class="fa fa-cogs" aria-hidden="true"></i> My Gear
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="background-image: url('images/photo1.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('images/photo2.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('images/photo3.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('images/photo4.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('images/photo5.jpg');"></div>
+                    </div>
+                    <a class="carousel-control-prev" href="#" role="button" id="prev">
+                        <span class="arrow-left">&#9664;</span>
+                    </a>
+                    <a class="carousel-control-next" href="#" role="button" id="next">
+                        <span class="arrow-right">&#9654;</span>
+                    </a>
+                    <div class="carousel-indicators">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Sujay Chava</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
