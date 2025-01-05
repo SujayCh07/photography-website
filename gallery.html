@@ -241,57 +241,33 @@
     </script>
 <script>
 
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImage = lightbox.querySelector('img');
-    const images = document.querySelectorAll('.gallery-grid img');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
+    document.addEventListener("DOMContentLoaded", () => {
+    // Select all images in the gallery
+    const galleryImages = document.querySelectorAll(".gallery-grid img");
 
-    let currentIndex = 0;
+    // Select the lightbox and its image
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImg = lightbox.querySelector("img");
 
-    images.forEach((image, index) => {
-        image.addEventListener('click', () => {
-            currentIndex = index;
-            openLightbox(image.src);
+    // Add click event to all gallery images
+    galleryImages.forEach((img) => {
+        img.addEventListener("click", () => {
+            // Set the lightbox image src to the clicked image src
+            lightboxImg.src = img.src;
+            // Show the lightbox
+            lightbox.classList.add("active");
         });
     });
 
-    leftArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        updateLightboxImage();
+    // Add click event to the lightbox to close it
+    lightbox.addEventListener("click", () => {
+        // Hide the lightbox
+        lightbox.classList.remove("active");
+        // Clear the lightbox image src
+        lightboxImg.src = "";
     });
+});
 
-    rightArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        updateLightboxImage();
-    });
-
-    function openLightbox(src) {
-        lightboxImage.src = src;
-        lightbox.style.display = 'flex';
-        document.addEventListener('keydown', handleKeyPress); // Listen for keydown events
-    }
-
-    function updateLightboxImage() {
-        lightboxImage.src = images[currentIndex].src;
-    }
-
-    lightbox.addEventListener('click', (event) => {
-        if (event.target !== lightboxImage) {
-            lightbox.style.display = 'none';
-            document.removeEventListener('keydown', handleKeyPress); // Remove listener when lightbox is closed
-        }
-    });
-
-    function handleKeyPress(event) {
-        if (event.key === 'ArrowLeft') {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            updateLightboxImage();
-        } else if (event.key === 'ArrowRight') {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            updateLightboxImage();
-        }
-    }
 </script>
 
 </body>
